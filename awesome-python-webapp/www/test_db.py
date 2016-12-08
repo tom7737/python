@@ -4,9 +4,9 @@ Created on 2016-12-7
 
 @author: admin
 '''
-from www.ms.models import User
 from www.ms import db
 import logging
+from www.models import User
 
 logging.basicConfig(level=logging.INFO)
 db.create_engine(user='root',password='',database='awesome')
