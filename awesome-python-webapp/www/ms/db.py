@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from www.config import configs
 
 __author__ = 'Michael Liao'
 
@@ -84,6 +85,8 @@ class _LasyConnection(object):
 
     def cursor(self):
         if self.connection is None:
+            if engine is None:
+                create_engine(**configs.db)
             connection = engine.connect()
             logging.info('open connection <%s>...' % hex(id(connection)))
             self.connection = connection

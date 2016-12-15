@@ -26,19 +26,19 @@ class Dict(dict):
 
     def __setattr__(self, key, value):
         self[key] = value
-
+#重载配置文件
 def merge(defaults, override):
     r = {}
     for k, v in defaults.iteritems():
         if k in override:
-            if isinstance(v, dict):
+            if isinstance(v, dict):#如果配置项是dict类型，则递归重载
                 r[k] = merge(v, override[k])
             else:
                 r[k] = override[k]
         else:
             r[k] = v
     return r
-
+#配置转dict
 def toDict(d):
     D = Dict()
     for k, v in d.iteritems():
