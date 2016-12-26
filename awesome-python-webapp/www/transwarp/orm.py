@@ -105,7 +105,7 @@ def _gen_sql(table_name, mappings):
     sql = ['-- generating SQL for %s:' % table_name, 'create table `%s` (' % table_name]
     for f in sorted(mappings.values(), lambda x, y: cmp(x._order, y._order)):
         if not hasattr(f, 'ddl'):
-            raise StandardError('no ddl in field "%s".' % f)
+            raise StandardError('no ddl in field "%s".' % n)
         ddl = f.ddl
         nullable = f.nullable
         if f.primary_key:
@@ -170,6 +170,7 @@ class ModelMetaclass(type):
 class Model(dict):
     '''
     Base class for ORM.
+
     >>> class User(Model):
     ...     id = IntegerField(primary_key=True)
     ...     name = StringField()
@@ -312,7 +313,7 @@ class Model(dict):
 
 if __name__=='__main__':
     logging.basicConfig(level=logging.DEBUG)
-    db.create_engine('root', '', 'test')
+    db.create_engine('www-data', 'www-data', 'test')
     db.update('drop table if exists user')
     db.update('create table user (id int primary key, name text, email text, passwd text, last_modified real)')
     import doctest

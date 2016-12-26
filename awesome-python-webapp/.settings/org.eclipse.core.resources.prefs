@@ -1,13 +1,10 @@
-#Fri Dec 16 15:11:26 CST 2016
+#Mon Dec 26 17:33:35 CST 2016
 eclipse.preferences.version=1
 encoding//www/apis.py=utf-8
 encoding//www/config.py=utf-8
 encoding//www/config_default.py=utf-8
 encoding//www/config_override.py=utf-8
 encoding//www/models.py=utf-8
-encoding//www/ms/db.py=utf-8
-encoding//www/ms/orm.py=utf-8
-encoding//www/ms/web.py=utf-8
 encoding//www/test_db.py=utf-8
 encoding//www/urls.py=utf-8
 encoding//www/wsgiapp.py=utf-8

@@ -9,7 +9,7 @@ JSON API definition.
 
 import re, json, logging, functools
 
-from www.ms.web import ctx
+from transwarp.web import ctx
 
 def dumps(obj):
     return json.dumps(obj)
@@ -48,6 +48,7 @@ class APIPermissionError(APIError):
 def api(func):
     '''
     A decorator that makes a function to json api, makes the return value as json.
+
     @app.route('/api/test')
     @api
     def api_test():
